@@ -50,7 +50,7 @@ const Home = () => {
       </div>
       <div
         id="mobile-categories"
-        className="w-full px-5 flex gap-x-4 overflow-x-scroll scrollbar-hide"
+        className="w-full px-5 flex gap-x-4 overflow-x-scroll scrollbar-hide mb-8"
         style={{ maxWidth: "100%" }}
       >
         {categories.map((category, index) => (
@@ -66,6 +66,21 @@ const Home = () => {
             <p className="text-[12px]">{category.title}</p>
           </div>
         ))}
+      </div>
+      <div id="mobile-banner" className="w-full h-[83px] px-5">
+        <div className="w-full h-full bg-[#62223C] px-4 py-2 rounded-xl flex items-center justify-between">
+          <div className="flex flex-col items-start leading-snug">
+            <h1 className="font-medium text-[28px] text-white">
+              Free Shipping
+            </h1>
+            <h2 className="text-[14px] text-[#BCBCBC]">
+              Available: 12 - 14 July
+            </h2>
+          </div>
+          <div className="w-[35%] border h-[57.75px] rounded-xl flex items-center justify-center text-[#62223C] text-[20px] bg-white font-bold">
+            SHIPFREE
+          </div>
+        </div>
       </div>
     </div>
   );
