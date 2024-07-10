@@ -17,7 +17,7 @@ const Navbar = () => {
               }`}
             >
               <Home />
-              <p className="select-none">Home</p>
+              <p className="select-none text-[12px]">Home</p>
             </div>
             <div
               className={`flex flex-col items-center cursor-pointer ${
@@ -25,7 +25,7 @@ const Navbar = () => {
               }`}
             >
               <ShoppingBag />
-              <p className="select-none">Cart</p>
+              <p className="select-none text-[12px]">Cart</p>
             </div>
           </div>
           <div className="flex items-center justify-between min-w-[35%] ">
@@ -35,7 +35,7 @@ const Navbar = () => {
               }`}
             >
               <PieChart />
-              <p className="select-none">Analytics</p>
+              <p className="select-none text-[12px]">Analytics</p>
             </div>
             <div
               className={`flex flex-col items-center cursor-pointer ${
@@ -43,7 +43,7 @@ const Navbar = () => {
               }`}
             >
               <User />
-              <p className="select-none">Profile</p>
+              <p className="select-none text-[12px]">Profile</p>
             </div>
           </div>
         </div>
