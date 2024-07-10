@@ -1,4 +1,4 @@
-import { Bell, Search } from "lucide-react";
+import { Bell, ChevronsRight, Search, Sparkles } from "lucide-react";
 import React from "react";
 import "../pages/home.css";
 
@@ -67,7 +67,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <div id="mobile-banner" className="w-full h-[83px] px-5">
+      <div id="mobile-banner" className="w-full h-[83px] px-5 mb-8">
         <div className="w-full h-full bg-[#62223C] px-4 py-2 rounded-xl flex items-center justify-between">
           <div className="flex flex-col items-start leading-snug">
             <h1 className="font-medium text-[28px] text-white">
@@ -81,6 +81,22 @@ const Home = () => {
             SHIPFREE
           </div>
         </div>
+      </div>
+      <div id="product-demo-display" className="w-full px-5">
+        <div className="w-full flex items-center justify-between">
+          <div className="w-[86px] h-[32px] bg-[#62223C] flex items-center justify-center text-white rounded-full ">
+            For You
+          </div>
+          <div className="w-[168.27px] h-[32px] flex  items-center justify-center gap-x-2 bg-[#E9E9E9] rounded-full font-medium">
+            <Sparkles stroke="#62223C" />
+            <p>Popular Today</p>
+          </div>
+          <div className="flex items-center justify-center text-[14px]">
+            <p>View All</p>
+            <ChevronsRight size={14} />
+          </div>
+        </div>
+        <div></div>
       </div>
     </div>
   );
