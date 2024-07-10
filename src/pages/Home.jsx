@@ -26,7 +26,7 @@ const Home = () => {
     <div className="w-full h-screen">
       <div
         id="mobile-user-details"
-        className="w-full mb-8 flex items-center justify-between px-5"
+        className="w-full mt-4 mb-8 flex items-center justify-between px-5"
       >
         <div className="flex items-center">
           <img src="/location.svg" alt="location icon" />
