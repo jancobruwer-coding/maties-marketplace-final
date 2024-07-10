@@ -2,17 +2,19 @@ import { Home, PieChart, Plus, ShoppingBag, User } from "lucide-react";
 import Add from "../../public/Add.svg";
 import React from "react";
 import { useLocation } from "react-router-dom";
+import "./navbar.css";
 
 const Navbar = () => {
   const location = useLocation();
   const isCurrentPath = (path) => location.pathname === path;
+
   return (
     <>
-      <div className="sm:hidde min-w-[400px] w-full h-20 fixed bottom-0 left-0 border pl-4 pr-5 flex items-center justify-between  bg-[#D9D9D9]">
+      <div className="sm:hidde min-w-[400px] w-full h-20 fixed bottom-0 left-0 border pl-4 pr-5 flex items-center justify-between bg-[#D9D9D9]">
         <div className="w-full h-full relative flex items-center justify-between">
-          <div className="flex items-center justify-between min-w-[30%] ">
+          <div className="flex items-center justify-between min-w-[30%]">
             <div
-              className={`flex flex-col items-center cursor-pointer  ${
+              className={`flex flex-col items-center cursor-pointer ${
                 isCurrentPath("/") ? "text-[#62223C]" : "text-black"
               }`}
             >
@@ -28,9 +30,9 @@ const Navbar = () => {
               <p className="select-none text-[12px]">Cart</p>
             </div>
           </div>
-          <div className="flex items-center justify-between min-w-[35%] ">
+          <div className="flex items-center justify-between min-w-[35%]">
             <div
-              className={`flex flex-col items-center cursor-pointer  ${
+              className={`flex flex-col items-center cursor-pointer ${
                 isCurrentPath("/analytics") ? "text-[#62223C]" : ""
               }`}
             >
@@ -47,7 +49,10 @@ const Navbar = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 cursor-pointer w-[20%] flex items-center justify-center">
+        <div
+          id="add"
+          className="absolute bottom-8 left-1/2 transform -translate-x-[60%] cursor-pointer flex items-center justify-center"
+        >
           <img src={Add} alt="Add" className="select-none" />
         </div>
       </div>
