@@ -51,7 +51,7 @@ const Navbar = () => {
         </div>
         <div
           id="add"
-          className="absolute bottom-8 left-1/2 transform -translate-x-[60%] cursor-pointer flex items-center justify-center"
+          className="absolute bottom-8 left-1/2 transform -translate-x-[62%] cursor-pointer flex items-center justify-center"
         >
           <img src={Add} alt="Add" className="select-none" />
         </div>
