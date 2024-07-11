@@ -82,7 +82,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div id="product-demo-display" className="w-full ">
+      <div id="product-demo-display" className="w-full mb-12">
         <div className="w-full flex items-center justify-between">
           <div className="w-[86px] h-[32px] bg-[#62223C] flex items-center justify-center text-white rounded-full ">
             For You
