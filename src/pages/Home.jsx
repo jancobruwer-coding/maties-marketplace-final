@@ -1,5 +1,6 @@
-import { Bell, ChevronsRight, Link, Search, Sparkles } from "lucide-react";
+import { Bell, ChevronsRight, Search, Sparkles } from "lucide-react";
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import "../pages/home.css";
 
 const Home = () => {
