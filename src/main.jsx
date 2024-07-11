@@ -5,6 +5,7 @@ import App from "./App.jsx";
 import Home from "../src/pages/Home.jsx";
 import Add from "../src/pages/Add.jsx";
 import "./index.css";
+import ViewAll from "./pages/ViewAll.jsx";
 
 const router = createBrowserRouter([
   {
@@ -14,6 +15,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Home />,
+      },
+      {
+        path: "/viewall",
+        element: <ViewAll />,
       },
       {
         path: "/add",

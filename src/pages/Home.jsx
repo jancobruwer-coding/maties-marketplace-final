@@ -1,4 +1,4 @@
-import { Bell, ChevronsRight, Search, Sparkles } from "lucide-react";
+import { Bell, ChevronsRight, Link, Search, Sparkles } from "lucide-react";
 import React, { useState } from "react";
 import "../pages/home.css";
 
@@ -136,10 +136,13 @@ const Home = () => {
             />
             <p>Popular Today</p>
           </div>
-          <div className="flex items-center justify-center text-[14px]">
-            <p>View All</p>
-            <ChevronsRight size={14} />
-          </div>
+          <Link
+            to={"/viewall"}
+            className="flex items-center justify-center text-[14px]"
+          >
+            <p className="select-none">View All</p>
+            <ChevronsRight size={14} className="select-none" />
+          </Link>
         </div>
         <div className="max-w-full flex items-center overflow-x-scroll scrollbar-hide mt-8 gap-x-4">
           {foryouItems.map((item, index) => (
