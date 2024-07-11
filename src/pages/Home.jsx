@@ -23,7 +23,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="w-full h-screen px-5">
+    <div className="w-full h-screen px-5 mb-28">
       <div
         id="mobile-user-details"
         className="w-full mt-4 mb-8 flex items-center justify-between "
@@ -82,7 +82,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div id="product-demo-display" className="w-full mb-[84px]">
+      <div id="product-demo-display" className="w-full ">
         <div className="w-full flex items-center justify-between">
           <div className="w-[86px] h-[32px] bg-[#62223C] flex items-center justify-center text-white rounded-full ">
             For You

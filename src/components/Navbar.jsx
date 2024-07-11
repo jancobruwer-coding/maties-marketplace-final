@@ -10,8 +10,8 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="sm:hidde min-w-[400px] w-full h-20 fixed bottom-0 left-0 border pl-4 pr-6 flex items-center justify-between bg-[#D9D9D9]">
-        <div className="w-full h-full relative flex items-center justify-between">
+      <div className="sm:hidden min-w-[400px] w-full h-28 fixed bottom-0 left-0  pt-8 bg-white flex items-center justify-between ">
+        <div className="w-full h-full relative flex items-center justify-between bg-[#D9D9D9] pl-4 pr-6">
           <div className="flex items-center justify-between min-w-[30%]">
             <div
               className={`flex flex-col items-center cursor-pointer ${
@@ -56,6 +56,7 @@ const Navbar = () => {
           <img src={Add} alt="Add" className="select-none" />
         </div>
       </div>
+
       <div className="hidden sm:block fixed w-full h-28 border"></div>
     </>
   );
