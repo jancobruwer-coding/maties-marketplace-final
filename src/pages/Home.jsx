@@ -1,8 +1,12 @@
 import { Bell, ChevronsRight, Search, Sparkles } from "lucide-react";
-import React from "react";
+import React, { useState } from "react";
 import "../pages/home.css";
 
 const Home = () => {
+  const [activeTab, setActiveTab] = useState("foryou");
+  const handleActiveTabChange = (tabIndex) => {
+    setActiveTab(tabIndex);
+  };
   const categories = [
     {
       title: "Furniture",
@@ -84,11 +88,29 @@ const Home = () => {
       </div>
       <div id="product-demo-display" className="w-full ">
         <div className="w-full flex items-center justify-between">
-          <div className="w-[86px] h-[32px] bg-[#62223C] flex items-center justify-center text-white rounded-full ">
+          <div
+            className={`w-[86px] h-[32px]  flex items-center justify-center  rounded-full ${
+              activeTab === "foryou"
+                ? "bg-[#62223C] text-white"
+                : "bg-[E9E9E9] text-black border"
+            }`}
+            onClick={() => handleActiveTabChange("foryou")}
+          >
             For You
           </div>
-          <div className="w-[168.27px] h-[32px] flex  items-center justify-center gap-x-2 bg-[#E9E9E9] rounded-full font-medium">
-            <Sparkles stroke="#62223C" />
+          <div
+            className={`w-[168.27px] h-[32px] flex  items-center justify-center gap-x-2  rounded-full font-medium ${
+              activeTab === "popular"
+                ? "bg-[#62223C] text-white"
+                : "bg-[#E9E9E9] text-black"
+            }`}
+            onClick={() => handleActiveTabChange("popular")}
+          >
+            <Sparkles
+              className={
+                activeTab === "popular" ? "stroke-white" : " stroke-[#62223C]"
+              }
+            />
             <p>Popular Today</p>
           </div>
           <div className="flex items-center justify-center text-[14px]">
