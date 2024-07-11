@@ -2,11 +2,36 @@ import { Home, PieChart, Plus, ShoppingBag, User } from "lucide-react";
 import Add from "../../public/Add.svg";
 import React from "react";
 import { useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./navbar.css";
 
 const Navbar = () => {
   const location = useLocation();
   const isCurrentPath = (path) => location.pathname === path;
+
+  const navItems = [
+    {
+      title: "Home",
+      url: "/",
+    },
+    {
+      title: "Cart",
+      url: "/cart",
+    },
+    {
+      title: "Add",
+      url: "/add",
+      imgUrl: "/Add.svg",
+    },
+    {
+      title: "Analytics",
+      url: "/analytics",
+    },
+    {
+      title: "Profile",
+      url: "/profile",
+    },
+  ];
 
   return (
     <>
@@ -19,7 +44,7 @@ const Navbar = () => {
               }`}
             >
               <Home />
-              <p className="select-none text-[12px]">Home</p>
+              <p className="select-none text-[12px]">{navItems[0].title}</p>
             </div>
             <div
               className={`flex flex-col items-center cursor-pointer ${
@@ -27,7 +52,7 @@ const Navbar = () => {
               }`}
             >
               <ShoppingBag />
-              <p className="select-none text-[12px]">Cart</p>
+              <p className="select-none text-[12px]">{navItems[1].title}</p>
             </div>
           </div>
           <div className="flex items-center justify-between min-w-[35%]">
@@ -37,7 +62,7 @@ const Navbar = () => {
               }`}
             >
               <PieChart />
-              <p className="select-none text-[12px]">Analytics</p>
+              <p className="select-none text-[12px]">{navItems[3].title}</p>
             </div>
             <div
               className={`flex flex-col items-center cursor-pointer ${
@@ -45,7 +70,7 @@ const Navbar = () => {
               }`}
             >
               <User />
-              <p className="select-none text-[12px]">Profile</p>
+              <p className="select-none text-[12px]">{navItems[4].title}</p>
             </div>
           </div>
         </div>
@@ -53,7 +78,11 @@ const Navbar = () => {
           id="add"
           className="absolute bottom-8 left-1/2 transform -translate-x-[62%] cursor-pointer flex items-center justify-center"
         >
-          <img src={Add} alt="Add" className="select-none" />
+          <img
+            src={navItems[2].imgUrl}
+            alt={navItems[2].title}
+            className="select-none"
+          />
         </div>
       </div>
 

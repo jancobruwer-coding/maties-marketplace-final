@@ -26,6 +26,29 @@ const Home = () => {
     },
   ];
 
+  const foryouItems = [
+    {
+      title: "Wooden Chair",
+      price: "150.00",
+      img: "/chair.jpg",
+    },
+    {
+      title: "Wooden Desk",
+      price: "650.00",
+      img: "/desk.jpeg",
+    },
+    {
+      title: "Bed Frame (Metal)",
+      price: "210.00",
+      img: "/bedframe.jpg",
+    },
+  ];
+
+  const limitTitleLength = (text) => {
+    const limitedText = text.length > 13 ? text.substring(0, 13) + "..." : text;
+    return limitedText;
+  };
+
   return (
     <div className="w-full h-screen px-5 mb-[112px]">
       <div
@@ -119,39 +142,19 @@ const Home = () => {
           </div>
         </div>
         <div className="max-w-full flex items-center overflow-x-scroll scrollbar-hide mt-8 gap-x-4">
-          <div>
-            <img
-              id="product1"
-              src="/chair.jpg"
-              className="min-w-[230px] aspect-square border rounded-xl"
-            />
-            <div className="flex items-center justify-between px-2 font-medium">
-              <label htmlFor="product1">Wooden Chair</label>
-              <p>R150.00</p>
+          {foryouItems.map((item, index) => (
+            <div>
+              <img
+                id={index}
+                src={item.img}
+                className="min-w-[230px] aspect-square border rounded-xl"
+              />
+              <div className="flex items-center justify-between px-2 font-medium">
+                <label htmlFor="product1">{limitTitleLength(item.title)}</label>
+                <p>R {item.price}</p>
+              </div>
             </div>
-          </div>
-          <div>
-            <img
-              id="product2"
-              src="/desk.jpeg"
-              className="min-w-[230px] aspect-square border rounded-xl"
-            />
-            <div className="flex items-center justify-between px-2 font-medium">
-              <label htmlFor="product2">Wooden Desk</label>
-              <p>R650.00</p>
-            </div>
-          </div>
-          <div>
-            <img
-              id="product1"
-              src="/bedframe.jpg"
-              className="min-w-[230px] aspect-square border rounded-xl"
-            />
-            <div className="flex items-center justify-between px-2 font-medium">
-              <label htmlFor="product1">Bed Frame</label>
-              <p>R210.00</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
     </div>
