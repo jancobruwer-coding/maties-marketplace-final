@@ -23,7 +23,7 @@ const Home = () => {
   ];
 
   return (
-    <div className="w-full h-screen px-5 mb-24">
+    <div className="w-full h-screen px-5 mb-[102px]">
       <div
         id="mobile-user-details"
         className="w-full mt-4 mb-8 flex items-center justify-between "
