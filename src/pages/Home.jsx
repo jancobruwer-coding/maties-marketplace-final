@@ -112,10 +112,10 @@ const Home = () => {
       <div id="product-demo-display" className="w-full ">
         <div className="w-full flex items-center justify-between">
           <div
-            className={`w-[86px] h-[32px]  flex items-center justify-center  rounded-full ${
+            className={`w-[86px] h-[32px]  flex items-center justify-center  rounded-full font-medium ${
               activeTab === "foryou"
                 ? "bg-[#62223C] text-white"
-                : "bg-[E9E9E9] text-black border"
+                : "bg-[#E9E9E9] text-black "
             }`}
             onClick={() => handleActiveTabChange("foryou")}
           >
