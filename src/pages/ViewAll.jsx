@@ -8,14 +8,19 @@ const ViewAll = () => {
 
   useEffect(() => {
     const fetchProducts = async () => {
-      const productsCollection = collection(db, "products");
-      const productsSnapshot = await getDocs(productsCollection);
-      const productsList = productsSnapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-      }));
-      setProducts(productsList);
-      setLoading(false);
+      try {
+        const productsCollection = collection(db, "products");
+        const productsSnapshot = await getDocs(productsCollection);
+        const productsList = productsSnapshot.docs.map((doc) => ({
+          id: doc.id,
+          ...doc.data(),
+        }));
+        setProducts(productsList);
+        setLoading(false);
+      } catch (error) {
+        console.error("Error fetching products: ", error);
+        setLoading(false); // Handle error state
+      }
     };
 
     fetchProducts();
@@ -37,7 +42,7 @@ const ViewAll = () => {
         {products.map((product) => (
           <div key={product.id} className="border p-4 rounded-xl">
             <img
-              src={product.imgUrl}
+              src={product.imgUrl} // Use product.imgUrl for the image source
               alt={product.title}
               className="w-full h-40 object-cover rounded-t-xl"
             />
