@@ -1,7 +1,7 @@
 import { Home, PieChart, Plus, ShoppingBag, User } from "lucide-react";
 import Add from "../../public/Add.svg";
 import React from "react";
-import { useLocation } from "react-router-dom";
+import { useLocation, Link } from "react-router-dom";
 import { motion } from "framer-motion";
 import "./navbar.css";
 
@@ -38,14 +38,15 @@ const Navbar = () => {
       <div className="sm:hidden min-w-[400px] w-full h-28 fixed bottom-0 left-0  pt-8 bg-white flex items-center justify-between ">
         <div className="w-full h-full relative flex items-center justify-between bg-[#D9D9D9] pl-4 pr-6">
           <div className="flex items-center justify-between min-w-[30%]">
-            <div
+            <Link
+              to={navItems[0].url}
               className={`flex flex-col items-center cursor-pointer ${
                 isCurrentPath("/") ? "text-[#62223C]" : "text-black"
               }`}
             >
               <Home />
               <p className="select-none text-[12px]">{navItems[0].title}</p>
-            </div>
+            </Link>
             <div
               className={`flex flex-col items-center cursor-pointer ${
                 isCurrentPath("/cart") ? "text-[#62223C]" : ""
@@ -78,11 +79,13 @@ const Navbar = () => {
           id="add"
           className="absolute bottom-8 left-1/2 transform -translate-x-[62%] cursor-pointer flex items-center justify-center"
         >
-          <img
-            src={navItems[2].imgUrl}
-            alt={navItems[2].title}
-            className="select-none"
-          />
+          <Link to={navItems[2].url}>
+            <img
+              src={navItems[2].imgUrl}
+              alt={navItems[2].title}
+              className="select-none"
+            />
+          </Link>
         </div>
       </div>
 
