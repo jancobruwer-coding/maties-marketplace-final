@@ -23,14 +23,14 @@ const Home = () => {
   ];
 
   return (
-    <div className="w-full h-screen">
+    <div className="w-full h-screen px-5">
       <div
         id="mobile-user-details"
-        className="w-full mt-4 mb-8 flex items-center justify-between px-5"
+        className="w-full mt-4 mb-8 flex items-center justify-between "
       >
         <div className="flex items-center">
           <img src="/location.svg" alt="location icon" />
-          <div className="flex flex-col leading-tight">
+          <div className="flex flex-col leading-tight select-none">
             {/* Account Type */}
             <p className="text-[14px] text-[#646464]">Free Account</p>
             <p className="text-[12px] font-medium">Merriman Avenue, 28</p>
@@ -38,7 +38,7 @@ const Home = () => {
         </div>
         <Bell className="w-[29px] aspect-square" />
       </div>
-      <div id="mobile-search" className="w-full px-5 mb-8">
+      <div id="mobile-search" className="w-full  mb-8">
         <div className="relative w-full px-4 py-4 border flex items-center rounded-xl bg-[#E9E9E9]">
           <Search className="absolute" stroke="#424242" />
           <input
@@ -50,7 +50,7 @@ const Home = () => {
       </div>
       <div
         id="mobile-categories"
-        className="w-full px-5 flex gap-x-4 overflow-x-scroll scrollbar-hide mb-8"
+        className="w-full  flex gap-x-4 overflow-x-scroll scrollbar-hide mb-8"
         style={{ maxWidth: "100%" }}
       >
         {categories.map((category, index) => (
@@ -67,7 +67,7 @@ const Home = () => {
           </div>
         ))}
       </div>
-      <div id="mobile-banner" className="w-full h-[83px] px-5 mb-8">
+      <div id="mobile-banner" className="w-full h-[83px]  mb-8">
         <div className="w-full h-full bg-[#62223C] px-4 py-2 rounded-xl flex items-center justify-between">
           <div className="flex flex-col items-start leading-snug">
             <h1 className="font-medium text-[28px] text-white">
@@ -82,7 +82,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <div id="product-demo-display" className="w-full px-5">
+      <div id="product-demo-display" className="w-full ">
         <div className="w-full flex items-center justify-between">
           <div className="w-[86px] h-[32px] bg-[#62223C] flex items-center justify-center text-white rounded-full ">
             For You
@@ -96,7 +96,41 @@ const Home = () => {
             <ChevronsRight size={14} />
           </div>
         </div>
-        <div></div>
+        <div className="max-w-full flex items-center overflow-x-scroll scrollbar-hide mt-8 gap-x-4">
+          <div>
+            <img
+              id="product1"
+              src="/chair.jpg"
+              className="min-w-[230px] aspect-square border rounded-xl"
+            />
+            <div className="flex items-center justify-between px-2 font-medium">
+              <label htmlFor="product1">Wooden Chair</label>
+              <p>R150.00</p>
+            </div>
+          </div>
+          <div>
+            <img
+              id="product2"
+              src="/desk.jpeg"
+              className="min-w-[230px] aspect-square border rounded-xl"
+            />
+            <div className="flex items-center justify-between px-2 font-medium">
+              <label htmlFor="product2">Wooden Desk</label>
+              <p>R650.00</p>
+            </div>
+          </div>
+          <div>
+            <img
+              id="product1"
+              src="/bedframe.jpg"
+              className="min-w-[230px] aspect-square border rounded-xl"
+            />
+            <div className="flex items-center justify-between px-2 font-medium">
+              <label htmlFor="product1">Bed Frame</label>
+              <p>R210.00</p>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   );
