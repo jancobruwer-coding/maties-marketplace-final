@@ -8,6 +8,7 @@ const Add = () => {
   const [price, setPrice] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [uploadProgress, setUploadProgress] = useState(0); // Track upload progress
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -28,10 +29,11 @@ const Add = () => {
         (snapshot) => {
           const progress =
             (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
-          console.log(`Upload is ${progress}% done`);
+          setUploadProgress(progress); // Update progress state
         },
         (error) => {
           console.error("Upload failed", error);
+          setLoading(false);
         },
         async () => {
           const imgUrl = await getDownloadURL(uploadTask.snapshot.ref);
@@ -46,6 +48,7 @@ const Add = () => {
           setPrice("");
           setImage(null);
           setLoading(false);
+          setUploadProgress(0); // Reset progress after upload
         }
       );
     } catch (error) {
@@ -106,6 +109,21 @@ const Add = () => {
             required
           />
         </div>
+        {uploadProgress > 0 && uploadProgress < 100 && (
+          <div className="relative pt-1 mt-2">
+            <div className="flex mb-2 items-center justify-between">
+              <div className="text-xs font-semibold text-indigo-600">
+                {uploadProgress.toFixed(2)}%
+              </div>
+            </div>
+            <div className="overflow-hidden h-2 mb-4 text-xs flex rounded bg-indigo-200">
+              <div
+                style={{ width: `${uploadProgress}%` }}
+                className="shadow-none h-full flex flex-col text-center whitespace-nowrap text-white justify-center bg-indigo-500 border"
+              ></div>
+            </div>
+          </div>
+        )}
         <button
           type="submit"
           className="inline-flex items-center px-4 py-2 border border-transparent text-sm font-medium rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
